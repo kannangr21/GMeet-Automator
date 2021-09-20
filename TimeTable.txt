@@ -1,3 +1,18 @@
+Using TimeTable.txt to feed the Class Name and Starting time of the class.
+The formats to be adapted are as follows,
+
+---- DATE and TIME:
+~ '$' (Dollar Sign) should be given before days.
+~ Time should be in 24 hrs format => (hh.mm)
+~ No characters other than '.' should be placed between hh and mm
+
+---- COURSE/SUBJECTS NAMING:
+~ Single Whitespace should be given between time and class name.
+~ No space should be present in the class name.
+~ Customizing the course/subject names to a shortcode is preferred.
+~ The Names / shortcodes given in this time table should exactly match the shortcodes in `functions.py/getGCRlink()`
+ 
+
 $Monday
 9.45 DSD
 11.00 CO
