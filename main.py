@@ -13,7 +13,7 @@ def code():
     if(className in Table):  
         foo.login()
         class_link = foo.getGCRlink(className)
-        foo.joinClass(class_link)
+        foo.joinClass(class_link, className)
         code()
     else:
         print(className)

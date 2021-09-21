@@ -36,7 +36,7 @@ $Thursday
 $Friday
 9.45 DS
 11.00 MAT
-13.00 JAVA
+13.00 JAVA(LAB)
 15.15 CO
 $Saturday
 8.45 MAT
