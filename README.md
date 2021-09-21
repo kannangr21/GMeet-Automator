@@ -42,9 +42,9 @@ This is an Automator developed using Python's Selenium framework. This works eff
 Basically, run this code once a day and attend all the classes!
 
 ## Note
-  If fixed links are posted in the stream but not scheduled as in the image, do add them to your Google calendar in order to avoid malfunctioning of the bot.
-  To add in Google calendar - refer https://calendar.google.com/calendar/
-  Add an event, check if it's scheduled weekly, edit the GMeet code and save the event.
+  If fixed links are posted in the stream but not scheduled as in the image, do add them to your Google calendar in order to avoid malfunctioning of the bot.  
+  To add in Google calendar - refer https://calendar.google.com/calendar/  
+  Add an event, check if it's scheduled weekly, edit the GMeet code and save the event.  
   
   ![Case](Image.png)
 
