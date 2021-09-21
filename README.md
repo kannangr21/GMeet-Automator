@@ -6,6 +6,8 @@ This is an Automator developed using Python's Selenium framework. This works eff
 
 - Python 3.5 or above installed in the machine
 - ChromeDriver.exe (has been added to this repository for ease of use)
+    Download the right version of ChromeDriver from https://chromedriver.chromium.org/  
+    For MacOS download the right version of driver and remove `.exe` extension in `functions.py` line `27`.
 - Good Internet Connection
 - Google Account (Mostly G-suite for schools and colleges, but yeah! personal accounts also works well)
 
