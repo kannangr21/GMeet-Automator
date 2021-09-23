@@ -15,7 +15,7 @@ This is an Automator developed using Python's Selenium framework. This works eff
 
 1. Clone this repository.
 2. Run the command `pip install -r requirements.txt` in the command prompt / terminal.
-3. Configure the `TimeTale.txt`, login credentials, GCR links, Sleep time based on internet connection / Class timings.  
+3. Configure the `TimeTable.txt`, login credentials, GCR links, Sleep time based on internet connection / Class timings.  
     In `functions.py` check the lines,  
         - `30`,`34` for login credentials  
         - `46`-`49` for class duration (Default: 1 - 2 hours)  
