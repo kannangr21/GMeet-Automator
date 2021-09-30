@@ -34,7 +34,7 @@ def login():         # Login to google account and redirects to GMail
     eMail.send_keys(config('PASSWORD')) # Enter the password as .send_keys("password"), remove config('PASSWORD')
     eMail.send_keys(Keys.RETURN)
 
-def buttonControl(className): # Turns off Camera, Mic and joins / leaves
+def buttonControl(className, classHour): # Turns off Camera, Mic and joins / leaves
     # Mutes Microphone
     driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div/div[9]/div[3]/div/div/div[4]/div/div/div[1]/div[1]/div/div[4]/div[1]').click() 
     sleep(1)
@@ -43,15 +43,22 @@ def buttonControl(className): # Turns off Camera, Mic and joins / leaves
     sleep(5) 
     # Joins the Meet 
     driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div/div[9]/div[3]/div/div/div[4]/div/div/div[2]/div/div[2]/div/div[1]/div[1]/span').click()
+    fmt = '%H.%M'
+    curTime = datetime.now().strftime(fmt)
+    curTime = datetime.strptime(curTime, fmt)
+    
     if className == "DSD(LAB)" or className == "DS(LAB)" or className == "JAVA(LAB)": # 2 hrs class
-        sleep(7200) # Stays in the meet for 2 hours (Update needed)
-    else:
-        sleep(3600) # Stays in the meet for 1 hour
+        endTime = datetime.strptime(str(float(classHour) + 2.0), fmt)
+    else:   # 1 hr class
+        endTime = datetime.strptime(str(float(classHour) + 1.0), fmt)
+    
+    sleep((endTime - curTime).seconds)
+    
     # Leaves the meet
     driver.find_element_by_xpath('//*[@id="ow3"]/div[1]/div/div[9]/div[3]/div[10]/div[2]/div/div[7]/span/button').click()
     sleep(3)
 
-def joinClass(link, className): # Looks For GMeet Link and redirects to it
+def joinClass(link, className, classHour): # Looks For GMeet Link and redirects to it
     sleep(5)
     driver.get(link)
     sleep(5)
@@ -74,7 +81,7 @@ def joinClass(link, className): # Looks For GMeet Link and redirects to it
             # Joins the event added through Google Calendar
             driver.find_element_by_xpath('//*[@id="yDmH0d"]/c-wiz/div/div[2]/div/div[2]/c-wiz/c-wiz/div[1]/div[1]/div/div[5]/c-wiz/div/c-wiz/div').click()    
     sleep(3)
-    buttonControl(className)
+    buttonControl(className, classHour)
     return driver.close()
 
 def timeTable():   # Gets the time table from the local storage and returns current day's schedule
@@ -110,7 +117,7 @@ def getClass(Table): # Searches for the live class and joins between (time - 5) 
             currentTime <= float(Table[i]) + 0.15 and  # within 15 mins from the start of the class
             currentTime >= float(Table[i]) - 0.05      # Before 5 mins of the class
             ):
-            return Table[i+1]
+            return Table[i+1], Table[i]
     if (currentTime > float(Table[-2])): # All the classes for the day has ended
             return "Chill!! That's all for today" # Customized message, Terminates the program
     else: # No class Currently
