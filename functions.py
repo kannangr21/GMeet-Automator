@@ -119,9 +119,9 @@ def getClass(Table): # Searches for the live class and joins between (time - 5) 
             ):
             return Table[i+1], Table[i]
     if (currentTime > float(Table[-2])): # All the classes for the day has ended
-            return "Chill!! That's all for today" # Customized message, Terminates the program
+            return "Chill!! That's all for today"," " # Customized message, Terminates the program
     else: # No class Currently
-        return " "
+        return " ", " "
 
 def getGCRlink(className): # Returns the live class GCR link
     # Use the Short codes given in the time table
