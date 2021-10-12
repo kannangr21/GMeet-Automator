@@ -50,11 +50,12 @@ Basically, run this code once a day and attend all the classes!
 
 ## Limitations
 
-1. `sleep()` can vary depending on the internet bandwidth.
-2. Since this is a bot, 100% correctness can't be achieved.
-3. You'll be caught if your teacher calls out your name.
-4. You'll be the last person exiting the class if your class ends beforehand the usual (will be updated).
-5. No GMeet link will be fetched if someother means than mentioned are implemented to post the link.
+1. The Automator might fail if Google changes the site structure of GCR, GMeet.
+2. `sleep()` can vary depending on the internet bandwidth.
+3. Since this is a bot, 100% correctness can't be achieved.
+4. You'll be caught if your teacher calls out your name.
+5. You'll be the last person exiting the class if your class ends beforehand the usual (will be updated).
+6. No GMeet link will be fetched if someother means than mentioned are implemented to post the link.
 
 ## Demo
 
